@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Customers</title>
+</head>
+<body>
+    <h2>All Customers</h2>
+    <ul>
+        {% for customer in customers %}
+            <li>{{ customer.name }} - {{ customer.email }}</li>
+        {% empty %}
+            <li>No customers found.</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'add_customer' %}">Add New Customer</a>
+</body>
+</html>
