@@ -1,0 +1,15 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block 'content' %}
+    <h1>{{ title }} Page</h1>
+
+    <p><strong>Student:</strong> {{ student_name }}</p>
+    <p>
+        <strong>Result:</strong>
+        <span class="{% if 'Pass' in result %}pass{% else %}fail{% endif %}">
+            {{ result }}
+        </span>
+    </p>
+
+    <p><a href="{% url 'results_page' %}">Back to All Results</a></p>
+{% endblock %}

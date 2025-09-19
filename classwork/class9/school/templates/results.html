@@ -1,0 +1,24 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block 'content' %}
+    <h1>{{ title }} Page</h1>
+
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Result</th>
+            <th>Action</th>
+        </tr>
+        {% for name, result in results.items %}
+            <tr>
+                <td>{{ name }}</td>
+                <td class="{% if 'Pass' in result %}pass{% else %}fail{% endif %}">
+                    {{ result }}
+                </td>
+                <td>
+                    <a href="{% url 'view_result' name %}">View Result</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
