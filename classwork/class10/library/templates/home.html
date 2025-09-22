@@ -1,0 +1,7 @@
+{%extends 'layout/app-layout.html'%}
+{%block content%}
+<h1>Welcome to Book Manager</h1>
+    <p>Click below to add a new book:</p>
+    <a href="{% url 'book_create' %}"> Add Book</a>
+
+{%endblock%}
