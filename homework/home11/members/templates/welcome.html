@@ -1,0 +1,5 @@
+{% extends 'layout/layout.html' %}
+{% block content %}
+<h2>Welcome {{ user.username }}!</h2>
+<p>You have visited this page <b>{{ visit_count }}</b> times during this session.</p>
+{% endblock %}
