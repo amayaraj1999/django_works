@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Price:</strong> {{ product.price }}</p>
+
+    <a href="{% url 'product_pdf' product.pk %}"><button>Download as PDF</button></a>
+    <a href="{% url 'send_product_email' product.pk %}"><button>Send Product Info by Email</button></a>
+</body>
+</html>
