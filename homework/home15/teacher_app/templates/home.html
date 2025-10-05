@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Teacher App</title>
+</head>
+<body>
+    <h1>Welcome to Teacher Management System</h1>
+    <p><a href="{% url 'add_teacher' %}">Add a New Teacher</a></p>
+
+    <h2>All Teachers</h2>
+    {% if teachers %}
+        <ul>
+            {% for teacher in teachers %}
+                <li>
+                    {{ teacher.first_name }} {{ teacher.last_name }} - {{ teacher.subject }} 
+                    ({{ teacher.years_of_experience }} years)
+                    {% if teacher.profile_photo %}
+                        <br>
+                        <img src="{{ teacher.profile_photo.url }}" width="100" height="100">
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No teachers added yet.</p>
+    {% endif %}
+</body>
+</html>
